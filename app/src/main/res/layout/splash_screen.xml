@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.deltatask3.MainActivity"
+    android:background="@color/black"
+    >
+
+    <TextView
+        android:id="@+id/splash_screen"
+        android:layout_width="287dp"
+        android:layout_height="126dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="358dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="247dp"
+        android:paddingLeft="50dp"
+        android:text="A DELTA PROJECT"
+        android:textColor="#3DDC84"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="78dp"
+        android:layout_height="95dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="169dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="521dp"
+        app:srcCompat="@drawable/splash" />
+</RelativeLayout>

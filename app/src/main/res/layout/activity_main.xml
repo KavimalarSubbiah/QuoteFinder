@@ -10,20 +10,38 @@
     android:id="@+id/mycontainer"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/Fragment1"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:text="RANDOM QUOTE" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/Fragment2"
-        android:layout_width="134dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="right"
-        android:text="RANDOM QUOTE" />
+        <Button
+            android:id="@+id/Fragment1"
+            android:layout_width="111dp"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:text="RANDOM QUOTE"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.082"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.965" />
+
+        <Button
+            android:id="@+id/Fragment2"
+            android:layout_width="98dp"
+            android:layout_height="39dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:text="RANDOM QUOTE"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.891"
+            app:layout_constraintStart_toEndOf="@+id/Fragment1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.976" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </FrameLayout>

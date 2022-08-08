@@ -1,6 +1,8 @@
 package com.example.deltatask3;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,23 +47,32 @@ public class MyFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         mQueue= Volley.newRequestQueue(getActivity().getApplicationContext());
 
     }
 
-    @Nullable
+   @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-        ButterKnife.bind(this, view);
-
+         ButterKnife.bind(this, view);
+      final LoadingDialog loadingDialog = new LoadingDialog(MyFragment.this);
         Button newquote = (Button) view.findViewById(R.id.new_quote);
         newquote.setOnClickListener(new View.OnClickListener()
         {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View v)
             {
+                loadingDialog.startLoadingDialog();
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable(){
+
+                                        @Override
+                                        public void run() {
+                                            loadingDialog.dismissDialog();
+                                        }
+                                    },5000);
                 jsonParse();
             }
         });
@@ -73,7 +85,7 @@ public class MyFragment extends Fragment {
 
     public void jsonParse(){
         View view= getView();
-        Log.v("bitch","gomma");
+        Log.v("jsonparse","jsonparseresponse");
 
         TextView fetchquote = (TextView) view.findViewById(R.id.quote);
         TextView fetchauthor = (TextView) view.findViewById(R.id.author);
@@ -87,10 +99,10 @@ public class MyFragment extends Fragment {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.v("fucking","asshole");
+                        Log.v("json","jsonresponse");
                         try {
 
-                            Log.v("your mom","for fuck's sake");
+                            Log.v("tryjson","tryjsonresponse");
 
                             String quote = response.getString("content");
                             String author = response.getString("author");
