@@ -72,7 +72,7 @@ public class MyFragment extends Fragment {
                                         public void run() {
                                             loadingDialog.dismissDialog();
                                         }
-                                    },5000);
+                                    },2000);
                 jsonParse();
             }
         });

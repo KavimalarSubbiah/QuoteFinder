@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -54,10 +55,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Fragment2.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 replaceFragment(new MyFragmentSearch());
+
             }
+
         });
 
 
@@ -81,10 +85,9 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.mycontainer, fragment);
         fragmentTransaction.commit();
-
-
-
         }
+
+
     }
 
 
